@@ -5,13 +5,8 @@
 
 
 File.open(ARGV[0]).each_line do |line|
-  output = ""
   line.split("").each do |char|
-    if char == char.upcase
-      output << char.downcase
-    else
-      output << char.upcase
-    end
+    char == char.upcase ? print(char.downcase) : print(char.upcase)
   end
-  puts output
+  print "\n"
 end
