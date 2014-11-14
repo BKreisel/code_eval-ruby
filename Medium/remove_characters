@@ -1,0 +1,12 @@
+# Challenge: Remove Characters
+
+# The first argument is a path to a file. The file contains the source strings
+# and the characters that need to be scrubbed. Each source string and
+# characters you need to scrub are delimited by comma.
+
+File.open(ARGV[0]).each_line do |line|
+  message,chars = line.split(", ")
+  chars = chars.split("")
+  chars.each{|x| message.tr!(x,'')}
+  puts message
+end
